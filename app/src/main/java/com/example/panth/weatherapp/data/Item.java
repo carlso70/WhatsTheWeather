@@ -7,6 +7,10 @@ import org.json.JSONObject;
  */
 public class Item implements JSONPopulator{
 
+    public Condition getCondition() {
+        return condition;
+    }
+
     private Condition condition;
 
     @Override
