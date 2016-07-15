@@ -1,0 +1,159 @@
+/*
+When calling the yahoo api it sends a JSON with sections called
+1. channel
+2. Condition
+3. Item
+4. Units
+Using those separate sections we create data models from the sections of this JSON response
+*/
+
+
+{
+   "query":{
+      "count":1,
+      "created":"2016-07-15T02:20:29Z",
+      "lang":"en-US",
+      "results":{
+         "channel":{
+            "units":{
+               "distance":"mi",
+               "pressure":"in",
+               "speed":"mph",
+               "temperature":"F"
+            },
+            "title":"Yahoo! Weather - Nome, AK, US",
+            "link":"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+            "description":"Yahoo! Weather for Nome, AK, US",
+            "language":"en-us",
+            "lastBuildDate":"Thu, 14 Jul 2016 06:20 PM AKDT",
+            "ttl":"60",
+            "location":{
+               "city":"Nome",
+               "country":"United States",
+               "region":" AK"
+            },
+            "wind":{
+               "chill":"50",
+               "direction":"248",
+               "speed":"18"
+            },
+            "atmosphere":{
+               "humidity":"86",
+               "pressure":"1022.0",
+               "rising":"0",
+               "visibility":"15.6"
+            },
+            "astronomy":{
+               "sunrise":"1:4 am",
+               "sunset":"5:9 am"
+            },
+            "image":{
+               "title":"Yahoo! Weather",
+               "width":"142",
+               "height":"18",
+               "link":"http://weather.yahoo.com",
+               "url":"http://l.yimg.com/a/i/brand/purplelogo//uh/us/news-wea.gif"
+            },
+            "item":{
+               "title":"Conditions for Nome, AK, US at 05:00 PM AKDT",
+               "lat":"64.499474",
+               "long":"-165.405792",
+               "link":"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/",
+               "pubDate":"Thu, 14 Jul 2016 05:00 PM AKDT",
+               "condition":{
+                  "code":"31",
+                  "date":"Thu, 14 Jul 2016 05:00 PM AKDT",
+                  "temp":"54",
+                  "text":"Clear"
+               },
+               "forecast":[
+                  {
+                     "code":"34",
+                     "date":"14 Jul 2016",
+                     "day":"Thu",
+                     "high":"57",
+                     "low":"49",
+                     "text":"Mostly Sunny"
+                  },
+                  {
+                     "code":"26",
+                     "date":"15 Jul 2016",
+                     "day":"Fri",
+                     "high":"53",
+                     "low":"49",
+                     "text":"Cloudy"
+                  },
+                  {
+                     "code":"26",
+                     "date":"16 Jul 2016",
+                     "day":"Sat",
+                     "high":"51",
+                     "low":"50",
+                     "text":"Cloudy"
+                  },
+                  {
+                     "code":"12",
+                     "date":"17 Jul 2016",
+                     "day":"Sun",
+                     "high":"51",
+                     "low":"50",
+                     "text":"Rain"
+                  },
+                  {
+                     "code":"23",
+                     "date":"18 Jul 2016",
+                     "day":"Mon",
+                     "high":"50",
+                     "low":"48",
+                     "text":"Breezy"
+                  },
+                  {
+                     "code":"26",
+                     "date":"19 Jul 2016",
+                     "day":"Tue",
+                     "high":"50",
+                     "low":"49",
+                     "text":"Cloudy"
+                  },
+                  {
+                     "code":"12",
+                     "date":"20 Jul 2016",
+                     "day":"Wed",
+                     "high":"50",
+                     "low":"48",
+                     "text":"Rain"
+                  },
+                  {
+                     "code":"30",
+                     "date":"21 Jul 2016",
+                     "day":"Thu",
+                     "high":"53",
+                     "low":"47",
+                     "text":"Partly Cloudy"
+                  },
+                  {
+                     "code":"11",
+                     "date":"22 Jul 2016",
+                     "day":"Fri",
+                     "high":"54",
+                     "low":"51",
+                     "text":"Showers"
+                  },
+                  {
+                     "code":"28",
+                     "date":"23 Jul 2016",
+                     "day":"Sat",
+                     "high":"56",
+                     "low":"50",
+                     "text":"Mostly Cloudy"
+                  }
+               ],
+               "description":"<![CDATA[<img src=\"http://l.yimg.com/a/i/us/we/52/31.gif\"/>\n<BR />\n<b>Current Conditions:</b>\n<BR />Clear\n<BR />\n<BR />\n<b>Forecast:</b>\n<BR /> Thu - Mostly Sunny. High: 57Low: 49\n<BR /> Fri - Cloudy. High: 53Low: 49\n<BR /> Sat - Cloudy. High: 51Low: 50\n<BR /> Sun - Rain. High: 51Low: 50\n<BR /> Mon - Breezy. High: 50Low: 48\n<BR />\n<BR />\n<a href=\"http://us.rd.yahoo.com/dailynews/rss/weather/Country__Country/*https://weather.yahoo.com/country/state/city-2460286/\">Full Forecast at Yahoo! Weather</a>\n<BR />\n<BR />\n(provided by <a href=\"http://www.weather.com\" >The Weather Channel</a>)\n<BR />\n]]>",
+               "guid":{
+                  "isPermaLink":"false"
+               }
+            }
+         }
+      }
+   }
+}
