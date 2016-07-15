@@ -1,9 +1,9 @@
 /*
 When calling the yahoo api it sends a JSON with sections called
-1. channel
-2. Condition
-3. Item
-4. Units
+1. channel, main section
+2. Condition, subsection of item
+3. Item, subsection of channel
+4. Units, subsection of channel
 Using those separate sections we create data models from the sections of this JSON response
 */
 
