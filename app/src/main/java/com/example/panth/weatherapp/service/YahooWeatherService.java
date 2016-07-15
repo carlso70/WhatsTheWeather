@@ -42,6 +42,10 @@ public class YahooWeatherService {
 
                 // YQL = Yahoo Query language
                 String YQL = String.format("select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\")", strings[0]);
+                /*
+                If you want to do celcious then you must do this query instead, (added and u='c' to the end of the query)
+                String YQL = String.format("select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\") and u='c'", strings[0]);
+                */
 
                 String endpoint = String.format("https://query.yahooapis.com/v1/public/yql?q=%s&format=json", Uri.encode(YQL));
 
