@@ -1,5 +1,6 @@
 package com.example.panth.weatherapp;
 
+import android.app.ProgressDialog;
 import android.media.Image;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBarActivity;
@@ -25,6 +26,7 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
 
     // Service
     private YahooWeatherService service;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +39,21 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
         conditionTextView = (TextView)findViewById(R.id.conditionTextView);
 
         service = new YahooWeatherService(this);
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Loading....please wait");
+        dialog.show();
+
         service.refreshWeather("Chicago, IL");
     }
 
     @Override
     public void serviceSuccess(Channel channel) {
-
+        dialog.hide();
     }
 
     @Override
     public void serviceFailure(Exception e) {
         Toast.makeText(WeatherActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+        dialog.hide();
     }
 }
