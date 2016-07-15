@@ -3,7 +3,7 @@ package com.example.panth.weatherapp.data;
 import org.json.JSONObject;
 
 /**
- * Created by panth on 7/14/2016.
+ * Created by Jimmy Carlson on 7/14/2016.
  */
 public class Condition implements JSONPopulator {
 
