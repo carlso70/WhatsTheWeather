@@ -55,8 +55,8 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
         dialog.hide();
 
         Item item = channel.getItem();
-
-        int resource = getResources().getIdentifier("drawable/icon_" + item.getCondition().getCode(), null, getPackageName());
+        System.out.println("Image resource = " + item.getCondition().getCode());
+        int resource = getResources().getIdentifier("drawable/icon" + item.getCondition().getCode(), null, getPackageName());
 
         @SuppressWarnings("deprecation")
         Drawable weatherIcon = getResources().getDrawable(resource);
@@ -65,7 +65,7 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
         temperatureTextView.setText(item.getCondition().getTemperature() + "\u00B0" + channel.getUnits().getTemperature());
         locationTextView.setText(service.getLocation());
         conditionTextView.setText(item.getCondition().getDescription());
-
+        weatherIconImageView.setImageDrawable(weatherIcon);
     }
 
     // Weather service callback method
