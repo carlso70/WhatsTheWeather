@@ -3,4 +3,9 @@
     <string name="location">Location</string>
     <string name="temperature">Temperature</string>
     <string name="condition">Condition</string>
+    <string name="service_not_available">Service not available</string>
+    <string name="invalid_lat_long_used">invalid latitude and/or long used</string>
+    <string name="no_location_data_provided">No location data was provided</string>
+    <string name="no_address_found">no address found</string>
+    <string name="address_found">Address found</string>
 </resources>
