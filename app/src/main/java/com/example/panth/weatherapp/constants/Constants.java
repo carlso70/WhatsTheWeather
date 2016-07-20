@@ -1,6 +1,8 @@
 package com.example.panth.weatherapp.constants;
 
 /**
+ *
+ * THESE WILL BE USED IN THE AND WITH THE FetchAddressIntent class
  * Created by jimmycarlson on 7/18/16.
  */
 public final class Constants {

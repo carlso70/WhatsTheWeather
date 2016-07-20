@@ -20,6 +20,7 @@ import java.util.Locale;
 
 
 /**
+ * WORK IN PROGRESS, this class will automatically get the location of the device
  * Created by jimmycarlson on 7/18/16.
  */
 public class FetchAddressIntentService extends IntentService {

@@ -55,4 +55,30 @@
         android:layout_alignRight="@+id/temperatureTextView"
         android:layout_alignEnd="@+id/temperatureTextView"
         android:layout_marginBottom="48dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressSearch"
+        android:layout_above="@+id/searchWeatherButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:editable="true"
+        android:hint="Chicago, IL"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textIsSelectable="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="searchWeather"
+        android:text="Find the Weather!"
+        android:id="@+id/searchWeatherButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="98dp" />
+
 </RelativeLayout>
