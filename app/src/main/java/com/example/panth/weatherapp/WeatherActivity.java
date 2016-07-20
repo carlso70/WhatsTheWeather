@@ -1,24 +1,28 @@
 package com.example.panth.weatherapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.ResultReceiver;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.support.v4.widget.TextViewCompat;
+import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.panth.weatherapp.constants.Constants;
 import com.example.panth.weatherapp.data.Channel;
 import com.example.panth.weatherapp.data.Item;
+import com.example.panth.weatherapp.service.FetchAddressIntentService;
 import com.example.panth.weatherapp.service.WeatherServiceCallback;
 import com.example.panth.weatherapp.service.YahooWeatherService;
 
+
 import org.w3c.dom.Text;
 
-public class WeatherActivity extends ActionBarActivity implements WeatherServiceCallback {
+public class WeatherActivity extends ActionBarActivity implements WeatherServiceCallback, ConnectionCallbacks, OnConnectionFailedListener{
 
     // UI elements
     private TextView temperatureTextView;
@@ -30,7 +34,10 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
     private YahooWeatherService service;
     private ProgressDialog dialog;
 
-    @Override
+    protected Location mLastLocation;
+    private AddressResultReceiver mResultReceiver;
+
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
@@ -48,8 +55,14 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
         service.refreshWeather("Chicago, IL");
     }
 
-    // Weather service callback method
+    protected void StartIntentService() {
+        Intent intent = new Intent(this, FetchAddressIntentService.class);
+        intent.putExtra(Constants.RECEIVER, mResultReceiver);
+        intent.putExtra(Constants.LOCATION_DATA_EXTRA, mLastLocation);
+        startService(intent);
+    }
 
+    // Weather service callback method
     @Override
     public void serviceSuccess(Channel channel) {
         dialog.hide();
@@ -73,5 +86,18 @@ public class WeatherActivity extends ActionBarActivity implements WeatherService
     public void serviceFailure(Exception e) {
         Toast.makeText(WeatherActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
         dialog.hide();
+    }
+
+    // Receiver data sent from FetchAddressIntentService
+    class AddressResultReceiver extends ResultReceiver {
+        public AddressResultReceiver(Handler handler) {
+            super(handler);
+        }
+
+
+        @Override
+        protected void OnReceiveResult(int ResultCode, Bundle resultData) {
+
+        }
     }
 }
